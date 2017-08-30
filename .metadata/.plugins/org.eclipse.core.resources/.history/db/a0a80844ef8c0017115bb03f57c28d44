@@ -1,0 +1,23 @@
+
+public class ConvertAtoB {
+
+	
+
+	public static void main(String[] args) {
+		
+		int a = 31;
+		int b = 14;
+		
+		byte c;
+		
+		c = (byte) (a ^ b);
+		String result;
+		String A = Integer.toBinaryString(a);
+		String B = Integer.toBinaryString(b);
+		result = Integer.toBinaryString(c);
+		System.out.println("A ==> "+A);
+		System.out.println("B ==> "+B);
+		System.out.println("result ==> "+result);
+	}
+
+}

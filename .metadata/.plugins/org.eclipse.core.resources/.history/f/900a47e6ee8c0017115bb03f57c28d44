@@ -1,0 +1,18 @@
+
+public class ConvertAtoB {
+
+	
+
+	public static void main(String[] args) {
+		
+		int a = 31;
+		int b = 14;
+		
+		byte c;
+		
+		c = (byte) (a ^ b);
+
+		System.out.println(Integer.toBinaryString(c));
+	}
+
+}

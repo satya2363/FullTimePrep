@@ -1,0 +1,17 @@
+
+public class ConvertAtoB {
+
+	
+
+	public static void main(String[] args) {
+		
+		int a = 31;
+		int b = 14;
+		
+		int c;
+		
+		c = a ^ b;
+
+	}
+
+}

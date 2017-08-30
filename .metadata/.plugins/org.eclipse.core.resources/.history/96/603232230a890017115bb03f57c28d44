@@ -1,0 +1,57 @@
+
+public class LongestPalinSubString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			String s = "cbbd";
+		 boolean[][] result = new boolean[s.length()][s.length()];
+	        
+	        for(int i=0;i<s.length();i++)
+	        {
+	            for(int j=s.length()-1;j>=0;j--)
+	            {
+	                if(s.charAt(i) == s.charAt(j) )
+	                result[i][j] = true;
+	                
+	                else
+	                result[i][j] = false;
+	                
+	            }
+	        }
+	        String sRes = "";
+	        int k = 0;
+	        int l = s.length()-1;
+	        
+	        while(k<s.length()-1 && l>=0) {
+	        	
+	        	if(result[k][l] == true ) {
+	        		sRes = sRes + s.charAt(k);
+	        		k++;l--;
+	        	}
+	        	
+	        	else if(result[k+1][l] == true ) {
+	        		k++;
+	        	}
+	        	
+	        	else {
+	        		l--;
+	        	}
+	        	 System.out.println(sRes);
+	        }
+	        
+	        System.out.println(sRes);
+	        
+//	        for(int i=0;i<s.length();i++)
+//	        {
+//	            for(int j=0;j<s.length();j++)
+//	            {
+//	            	
+//	                System.out.print(" "+result[i][j]);
+//	                
+//	            }
+//	            System.out.println();
+//	        }
+		
+	}
+
+}

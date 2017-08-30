@@ -1,0 +1,108 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+
+public class SubSets {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+			int[] nums={1,2,3,4};
+		
+			List <List<Integer>>mainList = new ArrayList<List<Integer>>();
+		 
+	        List<Integer> list = new ArrayList<Integer>();
+	        
+	        HashSet<List<Integer>> set = new HashSet<List<Integer>>();
+	        
+	       int i = 0;
+	        for(int j=0;j<nums.length;j++)
+	            list.add(nums[j]);
+	        
+	        
+	        subSetList(mainList,list);
+	        
+//	        List<List<Integer>> list = new ArrayList<>();
+//		    Arrays.sort(nums);
+//		    backtrack(list, new ArrayList<>(), nums, 0);
+		    System.out.println("mainList"+ mainList);
+
+	}
+	
+
+//	private static void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start){
+//		 System.out.print("temp");
+//	    list.add(new ArrayList<>(tempList));
+//	    System.out.print("temp");
+//	    for(int i = start; i < nums.length; i++){
+//	        tempList.add(nums[i]);
+//	        System.out.print("temp");
+//	        backtrack(list, tempList, nums, i + 1);
+//	        tempList.remove(tempList.size() - 1);
+//	        System.out.print("temp");
+//	    }
+//	}
+	
+	
+//	private static List<Integer> printList(List<Integer> list,int i) {
+//		
+//		if(list.size() > 5)
+//			return list;
+//		
+//		for(int j=i;j<3;j++) {
+//			System.out.println("j==>"+j);
+//			list.add(j);
+//		 printList(list,j);
+//		}
+//		System.out.println("list steps"+list);
+//		return list;
+//	}
+
+	private static List<List<Integer>> subSetList(List <List<Integer>> mainList,
+            List <Integer> list)  {
+		
+		List<Integer> tempList = new ArrayList<Integer>();
+	
+			if(list.isEmpty()) {
+				System.out.println("list"+list);
+				System.out.println("list size "+list.size());
+				System.out.println("============================");
+				mainList.add(tempList);
+				return mainList;
+			} else {
+				
+				for(Integer number : list) {
+					tempList.add(number);
+				}
+			}
+				mainList.add(tempList);	
+				
+				List<Integer> recurList = new ArrayList<Integer>();
+	
+			for(int j=0;j<list.size();j++) {
+				
+				System.out.println("============================");
+				System.out.println("list"+list);
+				System.out.println("j before call ===>"+j );
+				System.out.println("list size "+list.size());
+				System.out.println("============================");
+				list.remove(j);
+			
+				for(Integer number : list) {
+				recurList.add(number);
+				}
+			   subSetList(mainList,recurList);
+			   System.out.println("recur list"+recurList);
+			   recurList.clear();
+			   System.out.println("list"+list);
+			   System.out.println("j After call ===>" + j);
+			   System.out.println("List size " + list.size());
+			}
+			
+			System.out.println("before return");
+				return mainList;
+			}
+			
+			}

@@ -1,0 +1,45 @@
+
+public class FitBits {
+
+	public FitBits() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double num = 0.72;
+		String answer = printBinary(num);
+		
+		System.out.println(answer);
+
+	}
+	
+	
+	public static String printBinary(double num) {
+		 if (num >= 1 || num <= 0) {
+		 return "ERROR";
+		 }
+		
+		 StringBuilder binary = new StringBuilder();
+		 binary. append(".");
+		 while (num > 0) {
+		 /* Setting a limit on length: 32 characters */
+		 if (binary.length() >= 32) {
+			 System.out.println("here"+num);
+		 return "ERROR";
+		 }
+		
+		 double r = num * 2;
+		 if (r >= 1) {
+		 binary.append(1);
+		 num = r - 1;
+		 } else {
+		 binary.append(0);
+		 num = r;
+		 }
+		}
+		 return binary.toString();
+		 }
+		
+
+}

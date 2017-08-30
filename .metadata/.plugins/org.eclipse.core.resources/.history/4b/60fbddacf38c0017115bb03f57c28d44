@@ -1,0 +1,15 @@
+
+public class SwapEvenOdd {
+
+	
+	public static void main(String[] args) {
+
+		int a = 5;
+		int b =  ~a|a; 
+		String A = Integer.toBinaryString(a);
+		String B = Integer.toBinaryString(b);
+		System.out.println("A ==> "+ A);
+		System.out.println("B(Result) ==> "+ B);
+	}
+
+}
